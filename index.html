@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Customer Survey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>E-commerce Customer Survey</h1>
+        <form id="survey-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="region">Region:</label>
+                <select id="region" name="region" required>
+                    <option value="">Select your region</option>
+                    <option value="North America">North America</option>
+                    <option value="South America">South America</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Australia">Australia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="last-purchase">Date of last purchase:</label>
+                <input type="date" id="last-purchase" name="last-purchase" required>
+            </div>
+            <div class="form-group">
+                <label for="purchasing-frequency">How often do you purchase from our website?</label>
+                <select id="purchasing-frequency" name="purchasing-frequency" required>
+                    <option value="">Select an option</option>
+                    <option value="Once a week">Once a week</option>
+                    <option value="Once a month">Once a month</option>
+                    <option value="Once every few months">Once every few months</option>
+                    <option value="Once a year">Once a year</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>What type of products do you usually purchase? (Select all that apply)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="product-type" value="Electronics"> Electronics</label>
+                    <label><input type="checkbox" name="product-type" value="Clothing"> Clothing</label>
+                    <label><input type="checkbox" name="product-type" value="Home Goods"> Home Goods</label>
+                    <label><input type="checkbox" name="product-type" value="Books"> Books</label>
+                    <label><input type="checkbox" name="product-type" value="Other"> Other</label>
+                </div>
+            </div>
+            <div class="form-group" id="other-products-group" style="display: none;">
+                <label for="other-products">Please specify other products:</label>
+                <input type="text" id="other-products" name="other-products">
+            </div>
+            <div class="form-group">
+                <label for="satisfaction">Overall, how satisfied are you with our website?</label>
+                <select id="satisfaction" name="satisfaction" required>
+                    <option value="">Select an option</option>
+                    <option value="Very satisfied">Very satisfied</option>
+                    <option value="Satisfied">Satisfied</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Dissatisfied">Dissatisfied</option>
+                    <option value="Very dissatisfied">Very dissatisfied</option>
+                </select>
+            </div>
+            <div class="form-group" id="dissatisfied-group" style="display: none;">
+                <label for="dissatisfied-reason">Please specify why you are dissatisfied:</label>
+                <textarea id="dissatisfied-reason" name="dissatisfied-reason" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Rate the following aspects:</label>
+                <div class="rating-group">
+                    <label>Product Quality:</label>
+                    <div class="stars" data-name="product-quality">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <input type="hidden" name="product-quality" required>
+                </div>
+                <div class="rating-group">
+                    <label>Website Usability:</label>
+                    <div class="stars" data-name="website-usability">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <input type="hidden" name="website-usability" required>
+                </div>
+                <div class="rating-group">
+                    <label>Customer Service:</label>
+                    <div class="stars" data-name="customer-service">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <input type="hidden" name="customer-service" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pain-points">What are your biggest pain points with our website?</label>
+                <textarea id="pain-points" name="pain-points" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="comments">Additional comments or suggestions:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="thank-you-message" style="display:none;">
+            <h2>Thank you for your feedback!</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
